@@ -24,7 +24,7 @@ export class HomePage {
     let brightnessValue = 0.5;
     this.brightness.setBrightness(brightnessValue);
     this.vibration.vibrate(0);
-    this.flasghlight.switchOff();
+    this.flashlight.switchOff();
 
   }
 
