@@ -14,19 +14,43 @@ export class HomePage {
 
   }
 
+
   drainBattery(){
     let brightnessValue = 1;
     this.brightness.setBrightness(brightnessValue);
     this.flashlight.switchOn();
     this.vibration.vibrate(1000);
-  }
+    //display image toggle
+    var x = document.getElementById("batteryHigh");
+    var y = document.getElementById("batteryLow");
+    if (x.style.display === "none") {
+        x.style.display = "block";
+        y.style.display = "none";
+    } else {
+        x.style.display = "none";
+        y.style.display = "block";
+
+    }
+        }
+
   stopDrain(){
     let brightnessValue = 0.5;
     this.brightness.setBrightness(brightnessValue);
     this.vibration.vibrate(0);
     this.flashlight.switchOff();
+    //display image toggle
+    var x = document.getElementById("batteryHigh");
+    var y = document.getElementById("batteryLow");
+    if (x.style.display === "none") {
+        x.style.display = "block";
+        y.style.display = "none";
+    } else {
+        x.style.display = "none";
+        y.style.display = "block";
+
+    }
+
+    }
+
 
   }
-
-
-}
