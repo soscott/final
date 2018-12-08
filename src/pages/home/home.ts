@@ -3,6 +3,7 @@ import { NavController } from 'ionic-angular';
 import { Brightness } from '@ionic-native/brightness';
 import { Flashlight } from '@ionic-native/flashlight';
 import { Vibration } from '@ionic-native/vibration';
+import { BatteryStatus } from '@ionic-native/battery-status';
 
 @Component({
   selector: 'page-home',
@@ -10,16 +11,18 @@ import { Vibration } from '@ionic-native/vibration';
 })
 export class HomePage {
 
-  constructor(public navCtrl: NavController, private brightness: Brightness, private flashlight: Flashlight, private vibration: Vibration) {
+  constructor(public navCtrl: NavController, private brightness: Brightness, private flashlight: Flashlight, private vibration: Vibration,private batteryStatus: BatteryStatus) {
 
   }
+
+
 
 
   drainBattery(){
     let brightnessValue = 1;
     this.brightness.setBrightness(brightnessValue);
     this.flashlight.switchOn();
-    this.vibration.vibrate(1000);
+    this.vibration.vibrate(100000);
     //display image toggle
     var x = document.getElementById("batteryHigh");
     var y = document.getElementById("batteryLow");
@@ -30,6 +33,11 @@ export class HomePage {
         x.style.display = "none";
         y.style.display = "block";
 
+    }
+    window.addEventListener("batterylow", onBatteryLow, false);
+
+    function onBatteryLow(status){
+        alert("Battery Level Low " + status.level + "%");
     }
         }
 
@@ -51,6 +59,9 @@ export class HomePage {
     }
 
     }
+
+
+
 
 
   }

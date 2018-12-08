@@ -6,6 +6,7 @@ import { MyApp } from './app.component';
 import { Brightness } from '@ionic-native/brightness';
 import { Flashlight } from '@ionic-native/flashlight';
 import { Vibration } from '@ionic-native/vibration';
+import { BatteryStatus } from '@ionic-native/battery-status';
 
 import { AboutPage } from '../pages/about/about';
 import { ContactPage } from '../pages/contact/contact';
@@ -44,7 +45,8 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     {provide: ErrorHandler, useClass: IonicErrorHandler},
     Brightness,
     Flashlight,
-    Vibration
+    Vibration,
+    BatteryStatus
 
   ]
 })
