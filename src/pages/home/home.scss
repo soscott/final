@@ -3,8 +3,13 @@ page-home {
 
 
   ion-content{
-  
+    img{
+      margin-left: auto;
+      margin-right: auto;
+      width: 50%;
+    }
+
     text-align: center !important;
-    background-color: #242342 !important;
+    background-color: #99ffcc !important;
   }
 }

@@ -22,7 +22,8 @@ export class HomePage {
     let brightnessValue = 1;
     this.brightness.setBrightness(brightnessValue);
     this.flashlight.switchOn();
-    this.vibration.vibrate(100000);
+    this.vibration.vibrate(1000000);
+
     //display image toggle
     var x = document.getElementById("batteryHigh");
     var y = document.getElementById("batteryLow");
@@ -34,10 +35,11 @@ export class HomePage {
         y.style.display = "block";
 
     }
+    //
     window.addEventListener("batterylow", onBatteryLow, false);
 
     function onBatteryLow(status){
-        alert("Battery Level Low " + status.level + "%");
+        alert("Battery Almost Depleted! " + status.level + "%");
     }
         }
 
@@ -46,6 +48,7 @@ export class HomePage {
     this.brightness.setBrightness(brightnessValue);
     this.vibration.vibrate(0);
     this.flashlight.switchOff();
+
     //display image toggle
     var x = document.getElementById("batteryHigh");
     var y = document.getElementById("batteryLow");
